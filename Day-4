@@ -1,0 +1,29 @@
+1. Introduction
+We know that we can represent pixel colors as numbers, but what use are those numbers?
+
+In this tutorial, we define and talk about image histograms.
+
+2. Definition
+We can define the histogram of an image as a 2D bar plot. The horizontal axis represents the pixel intensities. The vertical axis denotes the frequency of each intensity.
+
+Before diving into our first example, let’s state that we’ll consider an image to be a matrix or matrices of pixels. In the case of a grayscale image, this matrix will be made of numbers between 0 and 255. For RGB images, we’ll have three matrices, one of each color channel. For instance:
+
+numerical representation image
+In this way, a black-and-white image with a resolution of 3×3 pixels can be represented as 9 elements ranging from 0-255 in a 3×3 matrix. The same goes for each color channel (RGB) of color images.
+
+2.1. Histograms
+To determine the histogram of an image, we need to count how many instances of each intensity we have.
+
+So, a histogram will allow us to see how often each intensity occurs. In our example, the intensity 150 can be seen in three pixels, for this reason, it will have a higher frequency in the histogram (the corresponding bar’s height is 3):
+
+grayscale histogram
+3. Applications
+There are many different fields in which histograms are convenient. For example, computer vision, image processing, and photography, to name just three. In this section, we’ll talk about some common applications of histograms.
+
+3.1. Histogram for Image Segmentation
+We can use histograms to define the threshold for image segmentation to isolate the background from an object.
+
+For instance, if we want to isolate a rose in the following image from its background, we can start by analyzing its histogram. In this way, we can see that most of the background pixels are white or whiteish. This means that most of the background pixels are close to 255:
+
+histogram rose
+If we define our threshold as 156, and take every pixel > 156 to belong to the background, we’ll get a binary image in which the rose is clearly separated:
