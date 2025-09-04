@@ -1,3 +1,3 @@
 # OpenCV-Practice
 
-A repo for opencv practice and the materials I read daily.
+A repository for opencv practice and the materials I read daily.
